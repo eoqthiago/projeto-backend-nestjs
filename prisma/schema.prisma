@@ -58,6 +58,7 @@ model PasswordReset {
   userId    String   @unique
   user      User     @relation(fields: [userId], references: [id])
   token     String   @unique
+  used      Boolean  @default(false)
   createdAt DateTime @default(now())
   expiresAt DateTime
 }
